@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fo:root xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:elml="http://www.elml.ch"
+         xmlns:fo="http://www.w3.org/1999/XSL/Format"
+         xmlns:fn="http://www.w3.org/2004/07/xpath-functions"
+         xmlns:xdt="http://www.w3.org/2004/07/xpath-datatypes"
+         xmlns:fox="http://xml.apache.org/fop/extensions"
+         font-family="Times">
+   <fo:layout-master-set>
+      <fo:simple-page-master master-name="title-page" page-height="29.7cm" page-width="21cm"
+                             margin-top="15mm"
+                             margin-bottom="15mm"
+                             margin-left="20mm"
+                             margin-right="20mm">
+         <fo:region-body margin-top="5mm" margin-bottom="5mm"/>
+      </fo:simple-page-master>
+      <fo:simple-page-master master-name="default-page" page-height="29.7cm" page-width="21cm"
+                             margin-top="15mm"
+                             margin-bottom="15mm"
+                             margin-left="20mm"
+                             margin-right="20mm">
+         <fo:region-body margin-top="12mm" margin-bottom="15mm"/>
+         <fo:region-before extent="10mm"/>
+         <fo:region-after extent="10mm"/>
+      </fo:simple-page-master>
+      <fo:simple-page-master master-name="twocolumn" page-height="29.7cm" page-width="21cm"
+                             margin-top="15mm"
+                             margin-bottom="15mm"
+                             margin-left="20mm"
+                             margin-right="20mm">
+         <fo:region-body margin-top="12mm" margin-bottom="15mm" column-count="2" column-gap="13pt"/>
+         <fo:region-before extent="10mm"/>
+         <fo:region-after extent="10mm"/>
+      </fo:simple-page-master>
+   </fo:layout-master-set>
+   <fo:page-sequence master-reference="title-page">
+      <fo:flow flow-name="xsl-region-body">
+         <fo:table id="coverpage" table-layout="fixed" text-align="center" width="100%">
+            <fo:table-column column-width="proportional-column-width(1)"/>
+            <fo:table-body>
+               <fo:table-row>
+                  <fo:table-cell border-style="solid" border-width="1pt" border-color="white" height="50pt"
+                                 text-align="center"
+                                 padding="3pt"
+                                 display-align="center">
+                     <fo:block>
+                        <fo:block>
+                           <fo:leader leader-pattern="space"/>
+                        </fo:block>
+                     </fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+               <fo:table-row>
+                  <fo:table-cell border-style="solid" border-width="1pt" border-color="white" padding="3pt"
+                                 display-align="center">
+                     <fo:block>
+                        <fo:block border-style="solid" border-width="1pt" border-color="#808080" padding="3pt">
+                           <fo:block>
+                              <fo:block text-align="center">
+                                 <fo:block>
+                                    <fo:block font-size="11pt*2.5" font-weight="bold" line-height="15pt*3">
+                                       <fo:block>
+                                          <fo:block>
+                                             <fo:leader leader-pattern="space"/>
+                                          </fo:block>My First eLML Lesson<fo:block>
+                                             <fo:leader leader-pattern="space"/>
+                                          </fo:block>
+                                          <fo:block>
+</fo:block>
+                                       </fo:block>
+                                    </fo:block>
+                                 </fo:block>
+                              </fo:block>
+                           </fo:block>
+                        </fo:block>
+                     </fo:block>
+                  </fo:table-cell>
+               </fo:table-row>
+            </fo:table-body>
+         </fo:table>
+      </fo:flow>
+   </fo:page-sequence>
+   <fo:page-sequence master-reference="default-page" initial-page-number="1" format="1">
+      <fox:outline internal-destination="content">
+         <fox:label>Table Of Content</fox:label>
+      </fox:outline>
+      <fox:outline internal-destination="MyLesson_unit_MyUnit.html">
+         <fox:label>1.1. My First eLML Unit</fox:label>
+         <fox:outline internal-destination="MyLesson_MyUnit_learningObject1.html">
+            <fox:label>1.1.1. My First eLML Learning Object</fox:label>
+         </fox:outline>
+      </fox:outline>
+      <fo:static-content flow-name="xsl-region-before">
+         <fo:block font-weight="bold" color="black" border-after-style="solid">My First eLML Lesson</fo:block>
+      </fo:static-content>
+      <fo:static-content flow-name="xsl-region-after" display-align="after">
+         <fo:block font-weight="bold" color="black" border-before-style="solid"
+                   text-align-last="justify">http://www.yourserver.com - Version from: 6.2.2012<fo:leader leader-pattern="space"/>
+            <fo:page-number/>
+         </fo:block>
+      </fo:static-content>
+      <fo:static-content flow-name="xsl-footnote-separator">
+         <fo:block>
+            <fo:leader leader-pattern="rule" leader-length="30%" rule-thickness="0.5pt"
+                       rule-style="solid"
+                       color="black"
+                       display-align="before"/>
+         </fo:block>
+      </fo:static-content>
+      <fo:flow flow-name="xsl-region-body" text-align="justify" font-size="11pt"
+               line-height="15pt"
+               orphans="3"
+               widows="3">
+         <fo:block id="content" font-size="11pt*2.0" font-weight="bold" break-before="page"
+                   keep-with-next.within-page="always"
+                   space-after="15pt*1.5">Table Of Content</fo:block>
+         <fo:block text-align-last="justify" margin-left="1em">
+            <fo:basic-link color="black" internal-destination="MyLesson_index.html">1. My First eLML Lesson</fo:basic-link>
+            <fo:leader leader-pattern="dots"/>
+            <fo:page-number-citation ref-id="MyLesson_index.html"/>
+         </fo:block>
+         <fo:block text-align-last="justify" margin-left="2em">
+            <fo:basic-link color="black" internal-destination="MyLesson_unit_MyUnit.html">1.1. My First eLML Unit</fo:basic-link>
+            <fo:leader leader-pattern="dots"/>
+            <fo:page-number-citation ref-id="MyLesson_unit_MyUnit.html"/>
+         </fo:block>
+         <fo:block text-align-last="justify" margin-left="3em">
+            <fo:basic-link color="black" internal-destination="MyLesson_MyUnit_learningObject1.html">1.1.1. My First eLML Learning Object</fo:basic-link>
+            <fo:leader leader-pattern="dots"/>
+            <fo:page-number-citation ref-id="MyLesson_MyUnit_learningObject1.html"/>
+         </fo:block>
+         <fo:block line-height="11pt*2.0*1.3" font-size="11pt*2.0" font-weight="bold"
+                   keep-with-next.within-page="always"
+                   text-align="left"
+                   span="all"
+                   space-after="15pt*0.4"
+                   break-before="page"
+                   id="MyLesson_index.html">1. My First eLML Lesson</fo:block>
+         <fo:block>
+            <fo:block>Some information to start your lesson.</fo:block>
+            <fo:block line-height="11pt*1.6*1.3" font-size="11pt*1.6" font-weight="bold"
+                      keep-with-next.within-page="always"
+                      text-align="left"
+                      span="all"
+                      space-after="15pt*0.4"
+                      break-before="page"
+                      id="MyLesson_unit_MyUnit.html">1.1. My First eLML Unit</fo:block>
+            <fo:block line-height="11pt*1.3*1.3" font-size="11pt*1.3" font-weight="bold"
+                      keep-with-next.within-page="always"
+                      text-align="left"
+                      span="all"
+                      space-after="15pt*0.4"
+                      break-before="page"
+                      id="MyLesson_MyUnit_learningObject1.html">1.1.1. My First eLML Learning Object</fo:block>
+            <fo:block border-style="solid" border-width="1pt" border-color="black" padding="3pt"
+                      start-indent="15pt"
+                      end-indent="15pt"
+                      space-after="15pt"
+                      background-color="lightgrey"
+                      margin="5pt"
+                      space-before="15pt">This body will clarify this learning object!</fo:block>
+         </fo:block>
+      </fo:flow>
+   </fo:page-sequence>
+</fo:root>

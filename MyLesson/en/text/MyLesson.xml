@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lesson xmlns="http://www.elml.ch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.elml.ch ../../../_config/validate.xsd" label="MyLesson" title="My First eLML Lesson">
+    <entry>
+        <paragraph>Some information to start your lesson.</paragraph>
+    </entry>
+    <unit label="MyUnit" title="My First eLML Unit">
+        <learningObject title="My First eLML Learning Object">
+            <clarify>
+                <box>This body will clarify this learning object!</box>
+            </clarify>
+        </learningObject>
+    </unit>
+</lesson>
